@@ -1,5 +1,5 @@
 # DDS
-Se subira la actividad antes del viernes
+
 
 
 Consultas para el viernes:
