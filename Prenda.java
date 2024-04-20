@@ -2,17 +2,15 @@ public class Prenda {
 	String tipo;
 	Categoria categoria;
 	Material material;
+	Trama trama;
 	Color colorPrincipal;
 	Color colorSecundario;
 	
 	
-	Prenda(String tipoNuevo,Material material,Color colorPrincipal, Color colorSecundario, Categoria categoria){
-		
-		if(tipoNuevo == null || material == null || colorPrincipal == null || categoria == null) {
-			throw new RuntimeException("Prenda invalida, porfavor seleccione tipo, color o material nuevo");
-		}
+	Prenda(String tipoNuevo,Material material,Color colorPrincipal,Trama tramaNueva, Color colorSecundario, Categoria categoria){
 		this.tipo 	  = tipoNuevo;
 		this.material = material;
+		this.trama  = tramaNueva;
 		this.colorPrincipal = colorPrincipal;
 		this.colorSecundario = colorSecundario;
 	}
@@ -30,10 +28,7 @@ public class Prenda {
 	}
 	
 	Color colorSecundario() {
-		if(colorSecundario == null) {
-			throw new RuntimeException("No tiene color secundario");
-		}else {
-			return colorSecundario;
-		}
+		if(colorSecundario == null) throw new RuntimeException("No tiene color secundario");
+		return colorSecundario;
 	}
 }
