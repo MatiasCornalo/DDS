@@ -1,40 +1,40 @@
 public class Borrador {
-    String tipo;
-	Categoria categoria;
-	Material material;
-	Trama trama = Trama.lisa;
-	Color colorPrincipal;
-	Color colorSecundario;
+    private String tipo;
+	private Categoria categoria;
+	private Material material;
+	private Trama trama = Trama.lisa;
+	private Color colorPrincipal;
+	private Color colorSecundario;
 
-    void tipo(String tipoNuevo){
+    public void tipo(String tipoNuevo){
         if(tipoNuevo ==  null) throw  new RuntimeException("La prenda  requiere de un  tipo especifico");
         this.tipo = tipoNuevo;
     }
 
-    void categoria(Categoria categoriaNueva){
+    public void categoria(Categoria categoriaNueva){
         if(categoriaNueva  == null) throw  new RuntimeException("La prenda  requiere de una categoria especifica");
         if(this.tipo  == null) throw  new RuntimeException("Porfavor, ingrese el tipo de prenda primero");
         this.categoria = categoriaNueva;
     }
 
-    void material(Material materialNuevo){
+    public void material(Material materialNuevo){
         if(material == null) throw  new RuntimeException("La prenda requiere de un material especifico");
         if(this.tipo  == null) throw  new RuntimeException("Porfavor, ingrese el tipo de prenda primero");
         this.material = materialNuevo;
     }
 
-    void colorPrincipal(Color colorNuevo){
+    public void colorPrincipal(Color colorNuevo){
         if(colorNuevo == null) throw  new RuntimeException("La prenda requiere de un material especifico");
         if(this.tipo  == null) throw  new RuntimeException("Porfavor, ingrese el tipo de prenda primero");
         this.colorPrincipal = colorNuevo;
     }
 
-    void trama(Trama tramaNueva){
+    public void trama(Trama tramaNueva){
         if(this.tipo  == null) throw  new RuntimeException("Porfavor, ingrese el tipo de prenda primero");
         this.trama = tramaNueva;
     }
 
-    void colorSecundario(Color colorNuevo){
+    public void colorSecundario(Color colorNuevo){
         if(this.tipo  == null) throw  new RuntimeException("Porfavor, ingrese el tipo de prenda primero");
         this.colorSecundario = colorNuevo;
     }

@@ -1,34 +1,46 @@
+import java.math.BigDecimal;
+
 public class Prenda {
-	String tipo;
-	Categoria categoria;
-	Material material;
-	Trama trama;
-	Color colorPrincipal;
-	Color colorSecundario;
+	private String tipo;
+	private Categoria categoria;
+	private Material material;
+	private Trama trama;
+	private Color colorPrincipal;
+	private Color colorSecundario;
+	private BigDecimal temperaturaMax;
 	
 	
-	Prenda(String tipoNuevo,Material material,Color colorPrincipal,Trama tramaNueva, Color colorSecundario, Categoria categoria){
-		this.tipo 	  = tipoNuevo;
-		this.material = material;
-		this.trama  = tramaNueva;
-		this.colorPrincipal = colorPrincipal;
+	public Prenda(String tipoNuevo,Material material,Color colorPrincipal,Trama tramaNueva, Color colorSecundario, Categoria categoria,BigDecimal temperatura){
+		this.tipo 	  		 = tipoNuevo;
+		this.material 		 = material;
+		this.trama  		 = tramaNueva;
+		this.colorPrincipal  = colorPrincipal;
 		this.colorSecundario = colorSecundario;
+		this.temperaturaMax  =  temperatura;
 	}
 	
-	String  tipo() {
+	public String tipo() {
 		return tipo;
 	}
 	
-	Material material() {
+	public Material material() {
 		return material;
 	}
 	
-	Color colorPrincipal() {
+	public Color colorPrincipal() {
 		return colorPrincipal;
 	}
 	
-	Color colorSecundario() {
+	public Color colorSecundario() {
 		if(colorSecundario == null) throw new RuntimeException("No tiene color secundario");
 		return colorSecundario;
+	}
+
+	public Boolean soyAptaParaClima(BigDecimal temperatura){
+		return this.temperaturaMax > temperatura;
+	}
+
+	public Boolean categoriaEs(Categoria categoriaNueva){
+		return categoriaNueva  == this.categoria;
 	}
 }

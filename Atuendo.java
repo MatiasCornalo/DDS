@@ -1,11 +1,13 @@
+import java.util.List;
+
 public class Atuendo {
-	Prenda[] prendas;
+	private List<Prenda> prendas;
 	
-	public Atuendo(Prenda[] prendasNuevas) {
+	public Atuendo(List<Prenda> prendasNuevas) {
 		this.prendas = prendasNuevas;
 	}
 	
-	Prenda[] prendas() {
+	public List<Prenda> prendas() {
 		return prendas;
 	}
 }
